@@ -1,0 +1,21 @@
+.input {
+    width: 70%;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #e8e8e8;
+    color: #272728;
+    transition: .3s ease;
+    &::placeholder {
+        color: #9e9ea7;
+        }
+    &:focus, &:hover {
+        outline: none;
+        border-color: rgba(234,76,137,0.4);
+        background-color: #fff;
+        box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+        }
+    }
+    
+    

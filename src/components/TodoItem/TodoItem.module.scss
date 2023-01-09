@@ -1,0 +1,35 @@
+.todoItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+    padding: 5px 20px;
+    border-bottom: 1px solid rgb(206, 201, 201);
+    border-radius: 6px;
+    transition: all .2s;
+    &:hover {
+        background-color: #f6f3f3;
+    }
+    .completed {
+        text-decoration: line-through;
+        color: #bebebe;
+    }
+    div {
+        width: 300px;
+        max-width: 300px;
+        text-align: start;
+    }
+    button {
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background: none;
+        font-weight: bold;
+        color: #bb5858;
+        transition: all .3s;
+        &:hover {
+            cursor: pointer;
+            border: 1px solid #bebebe;
+        }
+    }
+}
