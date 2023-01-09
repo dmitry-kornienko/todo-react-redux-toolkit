@@ -28,7 +28,7 @@ export const deleteTodo = createAsyncThunk(
                 method: 'DELETE',
             })
             if (!response.ok) {
-                throw new Error('Can not delete the task. Error on the server');
+                throw new Error('Can not delete the task. Server Error');
             }
             dispatch(removeTodo({id}));
         } catch (error) {
@@ -40,7 +40,6 @@ export const toggleStatus = createAsyncThunk(
     'todos/toggleStatus',
     async function(id, {rejectWithValue, dispatch, getState}) {
         // getState возвращает ОБЩИЙ стейт
-        // нахожу нужную задачу
         const todo = getState().todos.todos.find(todo => todo.id === id);
         try {
             const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
