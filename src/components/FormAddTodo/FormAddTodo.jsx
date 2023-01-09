@@ -1,17 +1,21 @@
 import styles from './FormAddTodo.module.scss';
 import { Input } from '../UI/Input'
 import { Btn } from '../UI/Btn/Btn';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../../store/todoSlice';
+import { addNewTodo, fetchTodos } from '../../store/todoSlice';
 
 export const FormAddTodo = () => {
   const [text, setText] = useState('');
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTodos())
+  }, [dispatch]);
 
   const addTask = () => {
     if (text.trim().length) {
-      dispath(addTodo({text}));
+      dispatch(addNewTodo(text));
       setText('');
     }
   };

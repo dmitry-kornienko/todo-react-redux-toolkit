@@ -7,15 +7,12 @@ export const TodoList = () => {
   const todos = useSelector(state => state.todos.todos)
   return (
     <>
-      {todos.length
-        ?
+      {todos.length > 0 &&
         <ul className={styles.todoList}>
           {todos.map((todo) => 
             <TodoItem key={todo.id} {...todo} />
           )}
         </ul>
-        :
-        <div className={styles.todoList}>The task list is empty</div>
       }
     </>
   )
